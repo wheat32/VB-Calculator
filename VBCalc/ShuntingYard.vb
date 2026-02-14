@@ -1,13 +1,16 @@
 Public Module ShuntingYard
     private Function IsOperator(token As Char) As Boolean
-        Return token = "+" OrElse token = "-" OrElse token = "*" OrElse token = "/"
+        Return token = "+"c OrElse 
+               token = "-"c OrElse 
+               token = "*"c OrElse 
+               token = "/"c
     End Function
     
     private Function GetPrecedence(op As Char) As Integer
         Select Case op
-            Case "+", "-"
+            Case "+"c, "-"c
                 Return 1
-            Case "*", "/"
+            Case "*"c, "/"c
                 Return 2
             Case Else
                 Return 0
